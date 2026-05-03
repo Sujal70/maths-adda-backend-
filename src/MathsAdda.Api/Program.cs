@@ -40,9 +40,9 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// Database
+// Database - Using PostgreSQL (Supabase)
 builder.Services.AddDbContext<MathsAddaDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

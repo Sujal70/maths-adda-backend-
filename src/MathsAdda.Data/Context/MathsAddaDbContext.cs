@@ -43,11 +43,5 @@ public class MathsAddaDbContext : DbContext
         {
             entity.HasIndex(e => e.Token).IsUnique();
         });
-
-        // Course configuration
-        modelBuilder.Entity<Course>(entity =>
-        {
-            entity.Property(e => e.Price).HasColumnType("decimal(18,2)");
-        });
     }
 }
