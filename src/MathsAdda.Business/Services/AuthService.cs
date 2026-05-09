@@ -73,11 +73,7 @@ public class AuthService : IAuthService
             return null;
         }
 
-        var role = await _roleRepository.GetByIdAsync(request.RoleId);
-        if (role == null)
-        {
-            role = await _roleRepository.GetByNameAsync("Student");
-        }
+        var role = await _roleRepository.GetByNameAsync("Student");
 
         var user = new User
         {
